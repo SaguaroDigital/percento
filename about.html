@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Percento — a free bilingual percentage calculator by SaguaroDigital." />
+  <title>About | Percento</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 32px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .about-card {
+      background: var(--sand-mid);
+      border: 1px solid var(--sand-border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-card h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--cerulean);
+      margin-bottom: 12px;
+    }
+
+    .about-card p {
+      font-size: 15px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    .about-card a {
+      color: var(--cerulean-lt);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .about-card a:hover {
+      text-decoration: underline;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin: 24px 20px 0;
+      padding: 10px 20px;
+      background: var(--cerulean);
+      color: #fff;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .back-btn:hover {
+      background: var(--cerulean-lt);
+      color: var(--cerulean);
+    }
+
+    .saguaro-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <svg width="32" height="32" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 68V28M40 28C40 22 34 18 34 12M40 28C40 22 46 18 46 12M28 44H22C19 44 17 42 17 39V32M52 44H58C61 44 63 42 63 39V32M28 44V58M52 44V58" stroke="#FAF7F2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="36" y1="6" x2="36" y2="9" stroke="#B87333" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="40" y1="4" x2="40" y2="8" stroke="#B87333" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="44" y1="6" x2="44" y2="9" stroke="#B87333" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="32" y1="7" x2="34" y2="10" stroke="#B87333" stroke-width="2" stroke-linecap="round"/>
+        <line x1="48" y1="7" x2="46" y2="10" stroke="#B87333" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <span class="logo-main">Percento</span>
+        <span class="logo-sub">by SaguaroDigital</span>
+      </div>
+    </div>
+    <button class="lang-toggle" id="langToggle">ES</button>
+  </header>
+
+  <!-- BACK BUTTON -->
+  <a href="index.html" class="back-btn">← Back to Calculator</a>
+
+  <!-- ABOUT CONTENT -->
+  <div class="about-container">
+
+    <div class="about-card">
+      <h2>About Percento</h2>
+      <p>Percento is a free, fast, and simple percentage calculator designed for everyday use. Whether you're checking a discount at a store, verifying a figure at work, or helping with homework — Percento gives you the answer instantly, without clutter or complexity.</p>
+    </div>
+
+    <div class="about-card">
+      <h2>Why Percento?</h2>
+      <p>Most percentage calculators on the web are buried inside bloated apps or cluttered with distractions. Percento was built around natural way people think about percentage logic.</p>
+    </div>
+
+    <div class="about-card">
+      <div class="saguaro-brand">
+        <svg width="28" height="28" viewBox="0 0 80 80" fill="none">
+          <path d="M40 68V28M40 28C40 22 34 18 34 12M40 28C40 22 46 18 46 12M28 44H22C19 44 17 42 17 39V32M52 44H58C61 44 63 42 63 39V32M28 44V58M52 44V58" stroke="#2A4A6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="36" y1="6" x2="36" y2="9" stroke="#B87333" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="40" y1="4" x2="40" y2="8" stroke="#B87333" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="44" y1="6" x2="44" y2="9" stroke="#B87333" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="32" y1="7" x2="34" y2="10" stroke="#B87333" stroke-width="2" stroke-linecap="round"/>
+          <line x1="48" y1="7" x2="46" y2="10" stroke="#B87333" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <h2 style="margin-bottom:0">About SaguaroDigital</h2>
+      </div>
+      <p>Percento is the first product of <strong>SaguaroDigital</strong>, Mr. Cactus's creative outlet and small independent studio building lightweight, useful digital tools for everyday people. More products coming soon.</p>
+    </div>
+
+    <div class="about-card">
+      <h2>Contact</h2>
+      <p>Questions, feedback, or just want to say hi to Mr.Cactus? Reach us at <a href="mailto:saguarodigitalmx@gmail.com">saguarodigitalmx@gmail.com</a></p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <a href="#">SaguaroDigital</a> · <a href="about.html">About</a></p>
+  </footer>
+
+</body>
+</html>
