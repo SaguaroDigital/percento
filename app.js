@@ -1,40 +1,46 @@
 // ── LANGUAGE STRINGS ──────────────────────────────────────
 const LANG = {
-    en: {
-      c1q:      "What is",
-      c1of:     "% of",
-      c1end:    "?",
-      c2is:     "is what % of",
-      c2end:    "?",
-      c3from:   "% change from",
-      c3to:     "to",
-      c3end:    "?",
-      copy:     "Copy",
-      copied:   "Copied!",
-      whatsapp: "WhatsApp",
-      history:  "Recent Calculations",
-      increase: "increase",
-      decrease: "decrease",
-      nochange: "no change",
-    },
-    es: {
-      c1q:      "¿Cuánto es",
-      c1of:     "% de",
-      c1end:    "?",
-      c2is:     "es qué % de",
-      c2end:    "?",
-      c3from:   "% de cambio de",
-      c3to:     "a",
-      c3end:    "?",
-      copy:     "Copiar",
-      copied:   "¡Copiado!",
-      whatsapp: "WhatsApp",
-      history:  "Cálculos Recientes",
-      increase: "aumento",
-      decrease: "disminución",
-      nochange: "sin cambio",
-    }
-  };
+  en: {
+    c1q:      "What is",
+    c1of:     "percent of",
+    c1end:    "?",
+    c2is:     "is what percent of",
+    c2end:    "?",
+    c3from:   "Percent change from",
+    c3to:     "to",
+    c3end:    "?",
+    copy:     "Copy",
+    copied:   "Copied!",
+    whatsapp: "WhatsApp",
+    history:  "Recent Calculations",
+    clear:    "Clear",
+    tagline:  "Calculate any percentage in seconds.",
+    calculate:"Calculate",
+    increase: "increase",
+    decrease: "decrease",
+    nochange: "no change",
+  },
+  es: {
+    c1q:      "¿Cuánto es",
+    c1of:     "por ciento de",
+    c1end:    "?",
+    c2is:     "es qué por ciento de",
+    c2end:    "?",
+    c3from:   "Cambio porcentual de",
+    c3to:     "a",
+    c3end:    "?",
+    copy:     "Copiar",
+    copied:   "¡Copiado!",
+    whatsapp: "WhatsApp",
+    history:  "Cálculos Recientes",
+    clear:    "Borrar",
+    tagline:  "Calcula cualquier porcentaje en segundos",
+    calculate:"Calcular",
+    increase: "aumento",
+    decrease: "disminución",
+    nochange: "sin cambio",
+  }
+};
   
   // ── STATE ─────────────────────────────────────────────────
   let currentLang = "en";
@@ -174,17 +180,47 @@ function clearHistory() {
   }
   
   // ── LANGUAGE TOGGLE ───────────────────────────────────────
-  function toggleLang() {
-    currentLang = currentLang === "en" ? "es" : "en";
-    document.getElementById("langToggle").textContent =
-      currentLang === "en" ? "ES" : "EN";
-    document.documentElement.lang = currentLang;
-    renderHistory();
-  }
-  
+function toggleLang() {
+  currentLang = currentLang === "en" ? "es" : "en";
+  const L = LANG[currentLang];
+
+  // toggle button
+  document.getElementById("langToggle").textContent =
+    currentLang === "en" ? "ES" : "EN";
+  document.documentElement.lang = currentLang;
+
+  // tagline
+  document.getElementById("tagline").textContent = L.tagline;
+
+  // card questions
+  document.querySelector("#calc1 .calc-question").innerHTML =
+    `${L.c1q} <input type="number" id="c1a" /> ${L.c1of} <input type="number" id="c1b" /> ${L.c1end}`;
+  document.querySelector("#calc2 .calc-question").innerHTML =
+    `<input type="number" id="c2a" /> ${L.c2is} <input type="number" id="c2b" /> ${L.c2end}`;
+  document.querySelector("#calc3 .calc-question").innerHTML =
+    `${L.c3from} <input type="number" id="c3a" /> ${L.c3to} <input type="number" id="c3b" /> ${L.c3end}`;
+
+  // calculate buttons
+  document.querySelectorAll(".btn-calculate").forEach(btn => {
+    btn.textContent = L.calculate;
+  });
+
+  // history
+  document.getElementById("historyTitle").textContent = L.history;
+  document.querySelector(".btn-clear").textContent = L.clear;
+
+  // re-render history with new language
+  renderHistory();
+}  
+
   // ── EVENT LISTENERS ───────────────────────────────────────
   document.getElementById("langToggle").addEventListener("click", toggleLang);
-  
-  // ── INIT ──────────────────────────────────────────────────
+
+// ── INIT ──────────────────────────────────────────────────
+const browserLang = navigator.language || navigator.userLanguage;
+if (browserLang.startsWith("es")) {
+  toggleLang();
+} else {
   document.getElementById("historySection").style.display = "none";
   renderHistory();
+}
