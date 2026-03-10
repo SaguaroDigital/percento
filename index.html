@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Percento — a free, fast and simple percentage calculator. Available in English and Spanish." />
+  <title>Percento | Percentage Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <svg width="32" height="32" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 68V28M40 28C40 22 34 18 34 12M40 28C40 22 46 18 46 12M28 44H22C19 44 17 42 17 39V32M52 44H58C61 44 63 42 63 39V32M28 44V58M52 44V58" stroke="#FAF7F2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="36" y1="6" x2="36" y2="9" stroke="#B87333" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="40" y1="4" x2="40" y2="8" stroke="#B87333" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="44" y1="6" x2="44" y2="9" stroke="#B87333" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="32" y1="7" x2="34" y2="10" stroke="#B87333" stroke-width="2" stroke-linecap="round"/>
+        <line x1="48" y1="7" x2="46" y2="10" stroke="#B87333" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <span class="logo-main">Percento</span>
+        <span class="logo-sub">by SaguaroDigital</span>
+      </div>
+    </div>
+    <button class="lang-toggle" id="langToggle">ES</button>
+  </header>
+
+  <!-- MAIN CALCULATOR -->
+  <main>
+
+    <!-- TAGLINE -->
+    <p class="tagline" id="tagline">Calculate any percentage in seconds</p>
+
+    <!-- CALCULATOR 1: What is X% of Y? -->
+<section class="calc-card" id="calc1">
+    <p class="calc-question">What is <input type="number" id="c1a" /> percent of <input type="number" id="c1b" /> ?</p>
+    <button class="btn-calculate" onclick="calc1()">Calculate</button>
+    <div class="calc-result" id="c1result"></div>
+    <div class="calc-actions" id="c1actions"></div>
+  </section>
+  
+  <!-- CALCULATOR 2: X is what percent of Y? -->
+  <section class="calc-card" id="calc2">
+    <p class="calc-question"><input type="number" id="c2a" /> is what percent of <input type="number" id="c2b" /> ?</p>
+    <button class="btn-calculate" onclick="calc2()">Calculate</button>
+    <div class="calc-result" id="c2result"></div>
+    <div class="calc-actions" id="c2actions"></div>
+  </section>
+  
+  <!-- CALCULATOR 3: Percentage change from X to Y -->
+  <section class="calc-card" id="calc3">
+    <p class="calc-question">Percent change from <input type="number" id="c3a" /> to <input type="number" id="c3b" /> ?</p>
+    <button class="btn-calculate" onclick="calc3()">Calculate</button>
+    <div class="calc-result" id="c3result"></div>
+    <div class="calc-actions" id="c3actions"></div>
+  </section>
+
+  </main>
+  
+<!-- HISTORY -->
+<section class="history-section" id="historySection">
+    <div class="history-header">
+      <h2 class="history-title" id="historyTitle">Recent Calculations</h2>
+      <button class="btn-clear" onclick="clearHistory()">Clear</button>
+    </div>
+    <ul class="history-list" id="historyList"></ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <a href="#">SaguaroDigital</a> · <a href="about.html">About</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
